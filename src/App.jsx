@@ -1,27 +1,42 @@
 import './App.css';
 import Counter from './Counter';
 import Batman from './Batman';
+import Friends from './Friends';
+import { Suspense } from 'react';
+
+// https://jsonplaceholder.typicode.com/users
+
+const fetchUsers = fetch('https://jsonplaceholder.typicode.com/users')
+  .then(res => res.json())
+
 
 
 function App() {
 
-  function handledButton3(){
-    alert("Button 3 has been clicked");
-  }
+  // function handledButton3(){
+  //   alert("Button 3 has been clicked");
+  // }
 
-  const handledButton4 = () => alert("Button 4 has been moused over");
+  // const handledButton4 = () => alert("Button 4 has been moused over");
 
-  const handleAddNum = (num) => {
-    let newNum = num + 10;
-    alert(newNum);
-  }
+  // const handleAddNum = (num) => {
+  //   let newNum = num + 10;
+  //   alert(newNum);
+  // }
 
   return (
     <>
       <h1>React and Vite</h1>
 
-    <Batman></Batman>
+      <Suspense fallback={<h3>Loading...</h3>}>
+        <Friends fetchUsers={fetchUsers}></Friends>
+      </Suspense>
 
+
+
+
+
+      {/* <Batman></Batman>
 
       <Counter></Counter>
 
@@ -36,7 +51,11 @@ function App() {
 
       <button onMouseOver={handledButton4}>Button 4 </button>
 
-      <button onClick={() => handleAddNum(20)}>Click To Add 10</button>
+      <button onClick={() => handleAddNum(20)}>Click To Add 10</button> */}
+
+
+
+
     </>
   )
 }
