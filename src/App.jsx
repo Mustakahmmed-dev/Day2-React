@@ -1,4 +1,7 @@
-import './App.css'
+import './App.css';
+import Counter from './Counter';
+import Batman from './Batman';
+
 
 function App() {
 
@@ -16,6 +19,11 @@ function App() {
   return (
     <>
       <h1>React and Vite</h1>
+
+    <Batman></Batman>
+
+
+      <Counter></Counter>
 
       <button onClick={function showAlert() {
         alert("You clicked me!")
