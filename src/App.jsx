@@ -1,12 +1,17 @@
 import './App.css'
 
 function App() {
-  
+
   function handledButton3(){
     alert("Button 3 has been clicked");
   }
 
   const handledButton4 = () => alert("Button 4 has been moused over");
+
+  const handleAddNum = (num) => {
+    let newNum = num + 10;
+    alert(newNum);
+  }
 
   return (
     <>
@@ -22,6 +27,8 @@ function App() {
       <button onClick={handledButton3}>Button 3</button>
 
       <button onMouseOver={handledButton4}>Button 4 </button>
+
+      <button onClick={() => handleAddNum(20)}>Click To Add 10</button>
     </>
   )
 }
