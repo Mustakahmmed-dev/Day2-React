@@ -3,13 +3,16 @@ import Counter from './Counter';
 import Batman from './Batman';
 import Friends from './Friends';
 import { Suspense } from 'react';
+import Posts from './Posts';
 
 // https://jsonplaceholder.typicode.com/users
 
 const fetchUsers = fetch('https://jsonplaceholder.typicode.com/users')
   .then(res => res.json())
 
-
+  const fetchPosts = fetch('https://jsonplaceholder.typicode.com/posts')
+  .then(res => res.json());
+  
 
 function App() {
 
@@ -28,12 +31,13 @@ function App() {
     <>
       <h1>React and Vite</h1>
 
-      <Suspense fallback={<h3>Loading...</h3>}>
+    <Suspense fallback={<h2>Posts are loading...</h2>}>
+      <Posts fetchPosts={fetchPosts}></Posts>
+    </Suspense>
+
+      {/* <Suspense fallback={<h3>Loading...</h3>}>
         <Friends fetchUsers={fetchUsers}></Friends>
-      </Suspense>
-
-
-
+      </Suspense> */}
 
 
       {/* <Batman></Batman>
