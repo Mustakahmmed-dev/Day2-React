@@ -4,6 +4,7 @@ import Batman from './Batman';
 import Friends from './Friends';
 import { Suspense } from 'react';
 import Posts from './Posts';
+import Task1 from './Task1';
 
 // https://jsonplaceholder.typicode.com/users
 
@@ -31,9 +32,11 @@ function App() {
     <>
       <h1>React and Vite</h1>
 
-    <Suspense fallback={<h2>Posts are loading...</h2>}>
+    <Task1></Task1>
+
+    {/* <Suspense fallback={<h2>Posts are loading...</h2>}>
       <Posts fetchPosts={fetchPosts}></Posts>
-    </Suspense>
+    </Suspense> */}
 
       {/* <Suspense fallback={<h3>Loading...</h3>}>
         <Friends fetchUsers={fetchUsers}></Friends>
